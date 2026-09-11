@@ -122,6 +122,13 @@ Allow service usage_reports to use ons-topics in tenancy
 | **Query** | choose the saved report `Daily Bill Report` (or re-enter Granularity `Daily`, Group by `Service`) |
 | **Date range** | `Last 7 days` |
 | **Notification / Output** | select the topic **`daily-billing-mail`** created in Step 2 |
+Make sure in advanced manual editor add as below 
+
+
+Allow service metering_overlay to manage objects in tenancy where all {target.bucket.name='YOUR_BUCKET_NAME', any {request.permission='OBJECT_CREATE', request.permission='OBJECT_DELETE', request.permission='OBJECT_READ'}}
+
+Just a above and replace the bucket name with your created bucket name 
+
 
 4. Click **Create**.
 5. On the schedule's detail page use **Run now** (or **Test**) if the button is offered — the mail
